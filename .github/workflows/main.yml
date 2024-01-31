@@ -21,7 +21,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
         uses: actions/checkout@v3
-    
+
       #install Node
       - name: Install Node
         uses: actions/setup-node@v4.0.1
@@ -40,7 +40,7 @@ jobs:
         with:
           build_dir: dist/myprofile
         env:
-          GITHUB_TOKEN: ${{secrets.GUTHUB_TOKRN}}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
