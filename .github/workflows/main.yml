@@ -33,6 +33,9 @@ jobs:
       #Build app for production
       - name: Build app
         run: npm run build:prod
+      #Route file renaming
+      - name: Rename index file for routing
+        run: mv dist/myprofile/index.html dist/myprofile/404.html
 
       #Deploy to Github pages
       - name: Deploy to Github Pages
