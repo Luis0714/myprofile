@@ -32,7 +32,7 @@ jobs:
         run: npm i
       #Build app for production
       - name: Build app
-        run: npm run build:prod
+        run: npm run build --if-present
       #Route file renaming
       - name: Rename index file for routing
         run: mv dist/browser/index.html dist/browser/404.html
