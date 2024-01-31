@@ -19,8 +19,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Checkout
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+    
       #install Node
       - name: Install Node
         uses: actions/setup-node@v4.0.1
@@ -37,10 +38,10 @@ jobs:
       - name: Deploy to Github Pages
         uses: crazy-max/ghaction-github-pages@v4.0.0
         with:
-          build_dir: dist/
+          build_dir: dist/myprofile
         env:
           GITHUB_TOKEN: ${{secrets.GUTHUB_TOKRN}}
-      
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
